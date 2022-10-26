@@ -1,4 +1,4 @@
-let tabuada = 5;
+llet tabuada = 5;
 
 function escreva(){
     document.write(tabuada + " x 1 = " + (tabuada*1) + "<br>");
@@ -28,10 +28,31 @@ function cubo(){
         document.write("O cubo de "+i+" é "+i+" x "+i+" x "+i+" = "+(i*i*i)+"<br>");
     }
 }
-function soma (){
-    let n1 = document.getElementsById ("v1").value;
-    let n2 = document.getElementsById ("v2").value;
-    let n3 = document.getElementsById ("v3").value;
-    let r = (Number(n1) + Number(n2) + Number(n3))/3;
-    document.getElementById("resultado").innerHTML = "media: " = r;
+
+   let t = document.getElementById ("meses").value;
+    let r = 0;
+    for(let i=1; i<=t; i++){
+     r = v * (1+(j/100));
+     v = r;
+    }
+    
+    document.write("resultado  " + r );
 }
+ function soma(){
+    let n1 = document.getElementById("v1").value;
+    let n2 = document.getElementById("v2").value;
+    let n3 = document.getElementById("v3").value;
+    let r = (Number(n1) + Number(n2) + Number(n3));
+    document.getElementById("resultado").innerHTML = "soma: " + r;
+ }
+ function subitração(){
+    let n1 = document.getElementById("v1").value;
+    let n2 = document.getElementById("v2").value;
+    let n3 = document.getElementById("v3").value;
+    let r = (Number(n1) - Number(n2) - Number(n3));
+    document.getElementById("resultado").innerHTML = "subitração: " + r;
+ }function mat(){
+    let v = document.getElementById("valor").value;
+    let j = document.getElementById ("juros").value;
+ 
+
