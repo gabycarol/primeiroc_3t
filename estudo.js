@@ -1,4 +1,4 @@
-llet tabuada = 5;
+let tabuada = 5;
 
 function escreva(){
     document.write(tabuada + " x 1 = " + (tabuada*1) + "<br>");
@@ -29,30 +29,82 @@ function cubo(){
     }
 }
 
-   let t = document.getElementById ("meses").value;
+function mat(){
+    let v = document.getElementById("valor").value;
+    let j = document.getElementById("juros").value;
+    let t = document.getElementById("messes").value;
     let r = 0;
     for(let i=1; i<=t; i++){
-     r = v * (1+(j/100));
-     v = r;
+        r = v * (1+(j/100));
+        v = r; 
+        document.getElementById("totalGeral").innerHTML = "Total: " +moeda(r);
+        
     }
-    
-    document.write("resultado  " + r );
+    document.write("Resultado " + r);
 }
- function soma(){
-    let n1 = document.getElementById("v1").value;
-    let n2 = document.getElementById("v2").value;
-    let n3 = document.getElementById("v3").value;
+function media(){
+    let n1 = document.getElementById("v1").value
+    let n2 = document.getElementById("v2").value
+    let n3 = document.getElementById("v3").value
+    let r = (Number(n1) + Number(n2) + Number(n3))/3;
+    document.getElementById("resultado").innerHTML = "Média : " + r;
+}
+function soma(){
+    let n1 = document.getElementById("v1").value
+    let n2 = document.getElementById("v2").value
+    let n3 = document.getElementById("v3").value
     let r = (Number(n1) + Number(n2) + Number(n3));
-    document.getElementById("resultado").innerHTML = "soma: " + r;
- }
- function subitração(){
-    let n1 = document.getElementById("v1").value;
-    let n2 = document.getElementById("v2").value;
-    let n3 = document.getElementById("v3").value;
+    document.getElementById("resultado").innerHTML = "Soma : " + r;
+}
+function subtração(){
+    let n1 = document.getElementById("v1").value
+    let n2 = document.getElementById("v2").value
+    let n3 = document.getElementById("v3").value
     let r = (Number(n1) - Number(n2) - Number(n3));
-    document.getElementById("resultado").innerHTML = "subitração: " + r;
- }function mat(){
-    let v = document.getElementById("valor").value;
-    let j = document.getElementById ("juros").value;
- 
+    document.getElementById("resultado").innerHTML = "Subtração : " + r;
+ }
+ function moeda(atual) {
+  return atual.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' });
+}
 
+function total() {
+  let c = document.getElementById("valor").value;
+  let j = document.getElementById("juros").value;
+  let t = document.getElementById("meses").value;
+  let r = moeda;
+
+
+  if (!Number(c)) {
+
+    alert("O capital deve ser numeros.");
+    document.getElementById("valor").value = "";
+    document.getElementById("valor").focus();
+    return;
+  }
+
+  if (!Number(j)) {
+    alert("O juros deve ser numeros.");
+    document.getElementById("juros").value = "";
+    document.getElementById("juros").focus();
+    return;
+  }
+
+  if (!Number(t)) {
+    alert("O meses deve ser numeros.");
+    document.getElementById("meses").value = "";
+    document.getElementById("meses").focus();
+    return;
+  }
+  let mes = "";
+
+  for (let i = 1; i <= t; i++) {
+    r = c * (1 + (j / 100));
+    mes += "Mês " + i + " valor: " + moeda(r) + "<br>";
+    //document.write("Mês " + i + " valor: " + moeda(r) + "<br>");
+    c = r;
+  }
+  document.getElementById("mes").innerHTML=mes;
+  
+  document.getElementById("total").innerHTML="Total: "+moeda(r);
+  //document.write("Resultado: " + moeda(r));
+}
