@@ -1,5 +1,5 @@
 #calculadora {
-    background: rgb(140, 147, 241);
+    background: rgb(123, 127, 180);
     width: 181px;
     padding: 22px;
     border-radius: 35px;
@@ -9,13 +9,13 @@
     top: 6%;
 }
 #calculadora input {
-    background: rgb(46, 2, 2);
+    background: rgb(108, 216, 150);
     color: black;
     border-radius: 35px;
     padding: 5px;
 }
 #calculadora button {
-    background: rgb(214, 173, 96);
+    background: rgb(120, 211, 128);
     color: black;
     margin-top: 10px;
     padding: 5px;
@@ -27,8 +27,8 @@
     cursor: ew-resize;
 }
 #spTotal {
-    background: rgb(0, 0, 0);
-    color: rgb(117, 80, 219);
+    background: rgb(54, 184, 145);
+    color: rgb(0, 0, 0);
     border-radius: 35px;
     padding: 5px;
 }
@@ -49,3 +49,4 @@
 #calcFin{
     display: none;
 }
+
